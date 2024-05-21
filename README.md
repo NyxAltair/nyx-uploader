@@ -1,6 +1,11 @@
 ### nyx-uploader
->  api.nyx.my.id
->  100% Free but limit 100mb/file and 30 minute remove
+
+
+```
+api.nyx.my.id present
+100% Free but limit 100mb/file and 30 minute remove
+```
+
 
 ```Javascript
 const fs = require('fs').promises;
@@ -48,6 +53,7 @@ const main = async () => {
     const result = { status: 'success', url, originalName, mimeType, size };
     console.log(JSON.stringify(result, null, 2));
 /*
+//output
 {
   "status": "success",
   "url": "https://uploader.nyx.my.id/tmp/gYRsbP-1716291051442.jpg",
@@ -56,8 +62,15 @@ const main = async () => {
   "size": "44.33"
 }
 */
+//Kalo url aja
 
-
+/*
+    const imageBuffer = await fs.readFile(imageFilePath);
+    const imageUrl = await uploadImage(imageBuffer);
+    console.log(imageUrl)
+//output
+    https://uploader.nyx.my.id/tmp/gYRsbP-1716291051442.jpg
+*/
   } catch (error) {
     const result = { status: 'error', message: error.message };
     console.log(JSON.stringify(result, null, 2));
