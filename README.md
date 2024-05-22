@@ -6,7 +6,7 @@ api.nyx.my.id present
 100% Free but limit 100mb/file and 30 minute remove
 ```
 
-### Usage 
+### General Usage 
 
 ```Javascript
 const fs = require('fs').promises;
@@ -111,6 +111,7 @@ const main = async () => {
     const imageBuffer = await fs.readFile(imageFilePath);
     const url = await uploadImage(imageBuffer, imageFilePath);
     console.log(url); // Output only the URL
+    //https://uploader.nyx.my.id/tmp/Y4pXIR-1716336421030.jpg
   } catch (error) {
     console.error('Error:', error.message);
   }
@@ -152,7 +153,7 @@ async function uploadImage(buffer) {
     if (!url) throw new Error('URL not found in response');
 
     return url;
-    //console.log("Output", url)
+    //console.log(url)
     //https://uploader.nyx.my.id/tmp/lP58de-1716291485588.jpg
   } catch (error) {
     console.error('Error during image upload:', error);
