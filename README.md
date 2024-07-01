@@ -2,7 +2,7 @@
 
 
 ```
-api.nyx.my.id present
+api.nyxs.pw present
 100% Free but limit 100mb/file and 30 minute remove
 ```
 
@@ -21,7 +21,7 @@ const uploadImage = async (buffer, filename) => {
   form.append('file', buffer, { filename: filename });
 
   try {
-    const response = await axios.post('https://uploader.nyx.my.id/upload', form, {
+    const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
       headers: {
         ...form.getHeaders(),
       },
@@ -52,10 +52,12 @@ const main = async () => {
     const result = { status: 'success', url, originalName, mimeType, size };
     console.log(JSON.stringify(result, null, 2));
 
+    return result
+
 /*
 {
   "status": "success",
-  "url": "https://uploader.nyx.my.id/tmp/BrBuDr-1716336151327.jpg",
+  "url": "https://uploader.nyxs.pw/tmp/BrBuDr-1716336151327.jpg",
   "originalName": "test.jpg",
   "mimeType": "image/jpeg",
   "size": "44.33"
@@ -86,7 +88,7 @@ const uploadImage = async (buffer, filename) => {
   form.append('file', buffer, { filename: filename });
 
   try {
-    const response = await axios.post('https://uploader.nyx.my.id/upload', form, {
+    const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
       headers: {
         ...form.getHeaders(),
       },
@@ -111,7 +113,9 @@ const main = async () => {
     const imageBuffer = await fs.readFile(imageFilePath);
     const url = await uploadImage(imageBuffer, imageFilePath);
     console.log(url); // Output only the URL
-    //https://uploader.nyx.my.id/tmp/Y4pXIR-1716336421030.jpg
+
+    return url
+    //https://uploader.nyxs.pw/tmp/Y4pXIR-1716336421030.jpg
   } catch (error) {
     console.error('Error:', error.message);
   }
@@ -141,7 +145,7 @@ async function uploadImage(buffer) {
     let form = new FormData();
     form.append('file', buffer, 'tmp.' + ext);
 
-    const response = await axios.post('https://uploader.nyx.my.id/upload', form, {
+    const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
       headers: {
         ...form.getHeaders(),
       },
@@ -154,7 +158,7 @@ async function uploadImage(buffer) {
 
     return url;
     //console.log(url)
-    //https://uploader.nyx.my.id/tmp/lP58de-1716291485588.jpg
+    //https://uploader.nyxs.pw/tmp/lP58de-1716291485588.jpg
   } catch (error) {
     console.error('Error during image upload:', error);
     throw new Error(error.response ? error.response.data : error.message);
