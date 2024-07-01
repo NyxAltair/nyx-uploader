@@ -13,7 +13,7 @@ async function uploadImage(buffer) {
     let form = new FormData();
     form.append('file', buffer, 'tmp.' + ext);
 
-    const response = await axios.post('https://uploader.nyx.my.id/upload', form, {
+    const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
       headers: {
         ...form.getHeaders(),
       },
