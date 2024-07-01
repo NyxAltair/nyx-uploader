@@ -10,7 +10,7 @@ const uploadImage = async (buffer, filename) => {
   form.append('file', buffer, { filename: filename });
 
   try {
-    const response = await axios.post('https://uploader.nyx.my.id/upload', form, {
+    const response = await axios.post('https://uploader.nyxs.pw/upload', form, {
       headers: {
         ...form.getHeaders(),
       },
@@ -44,7 +44,7 @@ const main = async () => {
 /*
 {
   "status": "success",
-  "url": "https://uploader.nyx.my.id/tmp/BrBuDr-1716336151327.jpg",
+  "url": "https://uploader.nyxs.pw/tmp/BrBuDr-1716336151327.jpg",
   "originalName": "test.jpg",
   "mimeType": "image/jpeg",
   "size": "44.33"
