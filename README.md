@@ -3,7 +3,7 @@
 
 ```
 api.nyxs.pw present
-100% Free but limit 100mb/file and 30 minute remove
+100% Free but limit 100mb/file and 60 minute remove
 ```
 
 ### General Usage 
